@@ -5,11 +5,11 @@
 
 
 const dropArea = document.getElementById("drop-area");
-console.log(dropArea)
+// console.log(dropArea)
 const inputFile = document.getElementById("input-file");
-console.log(inputFile)
+// console.log(inputFile)
 const imageView = document.getElementById("img-view");
-console.log(imageView)
+// console.log(imageView)
 
 //if change input img that will display
 
@@ -37,13 +37,14 @@ function uploadImage(){
 
 dropArea.addEventListener("dragover",function(e){
     e.preventDefault();
-z   inputFile.files = e.dataTransfer.files;
-    uploadImage();
+
     
 })
 
 dropArea.addEventListener("drop",function(e){
     e.preventDefault();
-    //when drop the img that will transfer the img to input file 
+    //when drop the img that will transfer the img to input file
+    inputFile.files = e.dataTransfer.files;
+    uploadImage();
 
 })
